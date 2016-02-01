@@ -1,0 +1,48 @@
+package edu.uga.prokino.browser;
+
+import java.util.HashSet;
+import java.util.Set;
+import javax.ws.rs.core.Application;
+
+
+// Class for the ProKinoBrowser REST application
+//
+// Purpose: create and hold a singleton ProKinOBrowserService object
+//
+/**
+ * @author Krys J. Kochut
+ *
+ * Class for the ProKinoBrowser REST application.
+ * It creates and stores singleton objects represetning various ProKinOBrowser services.
+ */
+public class BrowserApp extends Application
+{
+
+    private Set<Object>   singletons = new HashSet<Object>();
+
+    private Set<Class<?>> empty      = new HashSet<Class<?>>();
+
+    public BrowserApp()
+    {       
+        singletons.add( new ResourceService() );
+        singletons.add( new QueryService() );
+        singletons.add( new SearchService() );
+        singletons.add( new ClassService() );
+        singletons.add( new InfoService() );
+        singletons.add( new SchemaService() );
+        singletons.add( new AdminService() );
+        singletons.add( new QueryBuilderService() );
+    }
+
+    @Override
+    public Set<Class<?>> getClasses()
+    {
+        return empty;
+    }
+
+    @Override
+    public Set<Object> getSingletons()
+    {
+        return singletons;
+    }
+}
