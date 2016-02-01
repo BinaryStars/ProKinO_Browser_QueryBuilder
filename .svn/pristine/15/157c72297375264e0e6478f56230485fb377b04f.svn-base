@@ -1,0 +1,10 @@
+Find all pathways in which a specified kinase participates.<br>
+This example finds all pathways the epidermal growth factor receptor (EGFR) participates in. By replacing the line:
+<pre>
+        filter(STR(?geneName) = 'EGFR')
+</pre>
+with:
+<pre>
+        filter(STR(?geneName) = 'BRAF')
+</pre>
+we instead find all pathways in which the serine/threonine protein kinase B-raf (BRAF) participates.

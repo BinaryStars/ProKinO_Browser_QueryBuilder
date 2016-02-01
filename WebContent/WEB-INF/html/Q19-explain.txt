@@ -1,0 +1,10 @@
+Find the counts of wild type arginine mutations for each kinase, in descending order.<br>
+This example finds mutations with arginine as the wild type amino acid altered. By replacing the line:
+<pre>
+        filter(STR(?wt) = 'R')
+</pre>
+with:
+<pre>
+        filter(STR(?wt) = 'S')
+</pre>
+we instead find mutations with serine as the wild type amino acid altered.

@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Run a SPARQL Query</title>
+
+
+<link rel="stylesheet" type="text/css" href="../ui/prokino.css" />
+
+<link rel="stylesheet" type="text/css" href="../ui/sdmenu.css" />
+
+<script type="text/javascript" src="../ui/sdmenu.js">
+      /***********************************************
+      * Slashdot Menu script- By DimX
+      * Submitted to Dynamic Drive DHTML code library:  http://www.dynamicdrive.com
+      * Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
+      ***********************************************/
+</script>
+
+<script type="text/javascript">
+      // <![CDATA[
+        var myMenu;
+        window.onload = function() {
+                myMenu = new SDMenu("my_menu");
+		myMenu.remember = true; 
+                myMenu.init();
+		myMenu.expandMenu(myMenu.submenus[0]);
+        };
+        // ]]>
+</script>
+<style type="text/css">
+<!--
+.style1 {
+	font-size: x-large;
+	font-weight: bold;
+}
+.style2 {
+	font-size: large
+}
+.style4 {
+	font-size: x-large;
+	font-weight: bold;
+	color: #003366;
+}
+.style5 {
+	font-size: xx-large
+}
+-->
+</style>
+</head>
+<body>
+<table width="1000" height="824" border="0" align="center" cellpadding="2" cellspacing="3"  bgcolor="#FFFFFF">
+
+  <!-- start include:  header.html -->
+
+  <tr valign="middle">
+    <td colspan="2" bgcolor="#C8C8C8" style="vertical-align: top;height: 20px;">
+      <table width="894" height="81" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td width="100" height="81" style="vertical-align:center;">
+	    <a href="http://www.uga.edu" target="_blank">
+	      <img src="../ui/uga_logo.gif" hspace="0" vspace="0" border="0" align="middle" />
+	    </a>
+	  </td>
+          <td width="845" height="81">
+            <strong>
+              <span class="style5">ProKinO: Protein Kinase Ontology Browser</span><br />
+              <span class="style15">The University of Georgia</span>
+            </strong>
+	  </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+  <!-- end include:  header.html -->
+
+  <tr>
+    <td colspan="2" style="vertical-align: top; ">
+      <table width="890" border="0" cellpadding="5" cellspacing="0">
+        <tr>
+
+          <!-- startinclude:  menu.html -->
+
+          <td width="120" style="vertical-align: top; ">
+            <div style="float: left" id="my_menu" class="sdmenu">
+              <div>
+                <span>Browse</span>
+                <a href="../class/Organism">Organisms</a>
+                <a href="../class/Gene">Genes</a>
+                <a href="../hierarchy/ProteinKinaseDomain">Kinase Domains</a>
+                <a href="../class/Cancer">Diseases</a>
+                <a href="../class/FunctionalDomain">Functional Domains</a>
+              </div>
+              <div>
+                <span>Search</span>
+                 <a href="../search/Gene">Genes</a>
+                 <a href="../search/Cancer">Diseases</a>
+                 <a href="../search/Pathway">Pathways</a>
+                 <a href="../search/All">All classes</a>      
+              </div>
+              <div>
+                <span>Query</span>
+                 <a href="../query/sparql">SPARQL</a>      
+                 <a href="../query/sparql_examples">Example queries</a>      
+              </div>
+              <div class="collapsed">
+                <span>Download</span>
+                <a href="../download/prokino">ProKinO</a>      
+              </div>
+              <div>
+                <span>About</span>
+                <a href="../about/prokino">ProKinO</a>
+                <a href="../about/schema">ProKinO Schema</a>
+                <a href="../about/datasources">Data Sources</a>      
+                <a href="../about/browser">ProKinO Browser</a>      
+              </div>
+            </div>
+          </td>
+
+          <!-- end include:  menu.html -->
+
+          <td width="10">
+          </td>
+
+          <td width="780" valign="top">
+            <span class="style4">Query: Run your own SPARQL query
+            </span> <br />
+            <hr />
+            <table width="598" border="0" cellpadding="0" cellspacing="0">
+              <tr>
+                <td width="588">
+                  <form method="post" action="sparqlresult">
+		     <p>Enter
+		        your <a href="http://www.w3.org/TR/rdf-sparql-query/"
+		        target="_blank">SPARQL</a><sup>*</sup>
+		        query below.<br>Only <code>Select</code>
+		        queries are allowed.  Several examples are
+		        available <a href="sparql_examples">here</a>.
+		     <p>
+			 <textarea cols="70" rows="20" name="query_text" 
+				   style="font-family: 'Courier New', Courier, monospace"></textarea>
+	             <P>Output format: <select name="output_format">
+			  <option value="html" selected>HTML</option>
+			  <option value="csv">CSV</option>
+ 		        </select>
+		     <P><input type="submit" value="Execute">  
+                        <input type="reset" value="Clear"> 
+		  </form>
+	          <p>* You can use <a href="http://jena.sourceforge.net/" target="_blank">Jena</a>'s
+                        <a href="http://jena.sourceforge.net/ARQ/"
+                        target="_blank">ARQ</a>
+                        extended syntax, close to
+                        <a href="http://www.w3.org/TR/sparql11-query/"
+                        target="_blank">SPARQL 1.1</a>.
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,3 @@
+Find the counts of Human protein kinases (at least 4) pariticipating in 
+pathways and display them in descending order;
+include only pathways with 4 or more participating kinases

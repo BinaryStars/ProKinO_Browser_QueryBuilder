@@ -1,0 +1,34 @@
+Add the following directives to the end of the httpd.comf file.
+
+============= add to the end of httpd.comf  =========================
+<VirtualHost *:80>
+
+   RewriteEngine On
+   ProxyPreserveHost On
+
+   RewriteRule ^/prokino/browser$  \
+          http://gumbo.cs.uga.edu:8080/prokino/rest/about/browser [P]
+   RewriteRule ^/prokino/resource/(.*)$  \
+          http://gumbo.cs.uga.edu:8080/prokino/rest/resource/$1 [P]
+   RewriteRule ^/prokino/class/(.*)$  \
+          http://gumbo.cs.uga.edu:8080/prokino/rest/class/$1 [P]
+   RewriteRule ^/prokino/hierarchy/(.*)$  \
+          http://gumbo.cs.uga.edu:8080/prokino/rest/hierarchy/$1 [P]
+   RewriteRule ^/prokino/search/(.*)$  \
+          http://gumbo.cs.uga.edu:8080/prokino/rest/search/$1 [P]
+   RewriteRule ^/prokino/about/(.*)$  \
+          http://gumbo.cs.uga.edu:8080/prokino/rest/about/$1 [P]
+   RewriteRule ^/prokino/download/(.*)$  \
+          http://gumbo.cs.uga.edu:8080/prokino/rest/download/$1 [P]
+   RewriteRule ^/prokino/pubmed/(.*)$  \
+          http://gumbo.cs.uga.edu:8080/prokino/rest/pubmed/$1 [P]
+   RewriteRule ^/prokino/query/(.*)$  \
+          http://gumbo.cs.uga.edu:8080/prokino/rest/query/$1 [P]
+   RewriteRule ^/prokino/explore/(.*)$  \
+          http://gumbo.cs.uga.edu:8080/prokino/rest/explore/$1 [P]
+   RewriteRule ^/prokino/rest/(.*)$  \
+          prokino/$1 [P]
+   RewriteRule ^/prokino/ui/(.*)$  \
+             http://gumbo.cs.uga.edu:8080/prokino/ui/$1 [P]
+
+</VirtualHost>

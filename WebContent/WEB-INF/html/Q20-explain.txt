@@ -1,0 +1,19 @@
+Find all the missense mutations that alter an arginine in the epidermal growth factor receptor (EGFR).<br>
+This example finds mutations involving the epidermal growth factor receptor (EGFR). By replacing the line:
+<pre>
+         filter(STR(?geneName) = 'EGFR')
+</pre>
+with:
+<pre>
+         filter(STR(?geneName) = 'BRAF')
+</pre>
+we instead find mutations involving the serine/threonine protein
+kinase B-raf (BRAF). Furthermore, this example finds mutations with arginine as the wild type amino acid altered. By replacing the line:
+<pre>
+         filter(STR(?wt) = 'R')
+</pre>
+with:
+<pre>
+         filter(STR(?wt) = 'S')
+</pre>
+we instead find mutations with serine as the wild type amino acid altered.

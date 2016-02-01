@@ -1,0 +1,11 @@
+Find all reactions in which a specified kinase acts as either a reactant, a product or a catalyst.<br>
+This example finds all reactions involving the epidermal growth factor receptor (EGFR). By replacing the line:
+<pre>
+         filter(STR(?geneName) = 'EGFR')
+</pre>
+with:
+<pre>
+         filter(STR(?geneName) = 'BRAF')
+</pre>
+we instead find all reactions involving the serine/threonine protein kinase B-raf (BRAF).
+

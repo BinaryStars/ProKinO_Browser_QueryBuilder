@@ -1,0 +1,348 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>${title}</title>
+
+<link rel="stylesheet" type="text/css" href="../ui/prokino.css" />
+<link rel="stylesheet" type="text/css" href="../ui/tabcontent.css" />
+<link rel="stylesheet" type="text/css" href="../ui/sdmenu.css" />
+<script type="text/javascript" src="../ui/tabcontent.js">
+      /***********************************************
+      * Simple Tree Menu- © Dynamic Drive DHTML code library (www.dynamicdrive.com)
+      * This notice MUST stay intact for legal use
+      * Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
+      ***********************************************/
+</script>
+<script type="text/javascript" src="../ui/sdmenu.js">
+      /***********************************************
+      * Slashdot Menu script- By DimX
+      * Submitted to Dynamic Drive DHTML code library:  http://www.dynamicdrive.com
+      * Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
+      ***********************************************/
+</script>
+
+<script type="text/javascript">
+
+/***********************************************
+* Dynamic Ajax Content- ) Dynamic Drive DHTML code library (www.dynamicdrive.com)
+* This notice MUST stay intact for legal use
+* Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
+***********************************************/
+
+var bustcachevar=1 //bust potential caching of external pages after initial request? (1=yes, 0=no)
+var loadedobjects=""
+var rootdomain="http://"+window.location.hostname
+var bustcacheparameter=""
+
+function ajaxpage(url, containerid){
+var page_request = false
+if (window.XMLHttpRequest) // if Mozilla, Safari etc
+page_request = new XMLHttpRequest()
+else if (window.ActiveXObject){ // if IE
+try {
+page_request = new ActiveXObject("Msxml2.XMLHTTP")
+} 
+catch (e){
+try{
+page_request = new ActiveXObject("Microsoft.XMLHTTP")
+}
+catch (e){}
+}
+}
+else
+return false
+page_request.onreadystatechange=function(){
+loadpage(page_request, containerid)
+}
+if (bustcachevar) //if bust caching of external page
+bustcacheparameter=(url.indexOf("?")!=-1)? "&"+new Date().getTime() : "?"+new Date().getTime()
+page_request.open('GET', url+bustcacheparameter, true)
+page_request.send(null)
+}
+
+function loadpage(page_request, containerid){
+if (page_request.readyState == 4 && (page_request.status==200 || window.location.href.indexOf("http")==-1))
+document.getElementById(containerid).innerHTML=page_request.responseText
+}
+
+function loadobjs(){
+if (!document.getElementById)
+return
+for (i=0; i<arguments.length; i++){
+var file=arguments[i]
+var fileref=""
+if (loadedobjects.indexOf(file)==-1){ //Check to see if this object has not already been added to page before proceeding
+if (file.indexOf(".js")!=-1){ //If object is a js file
+fileref=document.createElement('script')
+fileref.setAttribute("type","text/javascript");
+fileref.setAttribute("src", file);
+}
+else if (file.indexOf(".css")!=-1){ //If object is a css file
+fileref=document.createElement("link")
+fileref.setAttribute("rel", "stylesheet");
+fileref.setAttribute("type", "text/css");
+fileref.setAttribute("href", file);
+}
+}
+if (fileref!=""){
+document.getElementsByTagName("head").item(0).appendChild(fileref)
+loadedobjects+=file+" " //Remember this object as being already added to page
+}
+}
+}
+
+</script>
+
+
+<script type="text/javascript">
+      // <![CDATA[
+        var myMenu;
+        window.onload = function() {
+                myMenu = new SDMenu("my_menu");
+		myMenu.remember = true; 
+                myMenu.init();
+		myMenu.expandMenu(myMenu.submenus[0]);
+        };
+        // ]]>
+</script>
+<style type="text/css">
+<!--
+.style1 {
+	font-size: x-large;
+	font-weight: bold;
+}
+.style2 {
+	font-size: large
+}
+.style4 {
+	font-size: x-large;
+	font-weight: bold;
+	color: #003366;
+}
+.style5 {
+	font-size: xx-large
+}
+-->
+</style>
+</head>
+<body>
+
+<table width="1000" height="824" border="0" align="center" cellpadding="2" cellspacing="3"  bgcolor="#FFFFFF">
+
+  <#include "header.html">
+
+  <tr>
+
+    <td colspan="2" style="vertical-align: top; ">
+      <table width="890" border="0" cellpadding="5" cellspacing="0">
+        <tr>
+
+	  <#include "menu.html">
+
+          <td width="10">
+          </td>
+
+          <td width="780" valign="top"><span class="style4">${typename}: ${resname}</span> <br />
+            <hr />
+            <ul id="genetabs" class="shadetabs">
+              <li><a href="#" rel="generalinfo" class="selected">General information</a></li>
+              <li><a href="#" rel="funcfeatures">Functional Features</a></li>
+              <li><a href="#" rel="mutations">Mutations</a></li>
+              <li><a href="#" rel="pathways">Pathways</a></li>
+              <li><a href="#" rel="references">References</a></li>
+            </ul>
+
+            <div style="margin-bottom: 1em; padding: 1px">
+              <div id="generalinfo" class="tabcontent">
+                <table width="780" border="0" cellpadding="2" cellspacing="3">
+                  <tbody>
+            <tr>
+              <td colspan="2" style="vertical-align: top; height: 5px;"></td>
+            </tr>
+	    <#list generalvals as generalval>
+	      <tr>
+                <td width="139" align="right" valign="top"><strong>${generalval[0]}</strong></td>
+                <td width="620" align="left" valign="bottom">${generalval[1]}</td>
+              </tr>
+            </#list>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="funcfeatures" class="tabcontent">
+        <table width="780" border="0" cellpadding="2" cellspacing="3">
+          <tbody>
+            <tr>
+              <td colspan="2" style="vertical-align: top; height: 5px;"></td>
+            </tr>
+	    <#list funcvals as funcval>
+	      <tr>
+                <td width="139" align="right" valign="top"><strong>${funcval[0]}</strong></td>
+                <td width="620" align="left" valign="bottom">${funcval[1]}</td>
+              </tr>
+            </#list>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="pathways" class="tabcontent">
+        <table width="780" border="0" cellpadding="2" cellspacing="3">
+          <tbody>
+            <tr>
+              <td colspan="2" style="vertical-align: top; height: 5px;"></td>
+            </tr>
+	    <#list pathvals as pathval>
+	      <tr>
+                <td width="139" align="right" valign="top"><strong>${pathval[0]}</strong></td>
+                <td width="620" align="left" valign="bottom">${pathval[1]}</td>
+              </tr>
+            </#list>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="mutations" class="tabcontent">
+        <ul id="mutationtabs" class="shadetabs" style="margin-top: 5px">
+          <li><a href="#" rel="substitutions">Substitutions</a></li>
+          <li><a href="#" rel="insertions">Insertions</a></li>
+          <li><a href="#" rel="deletions">Deletions</a></li>
+          <li><a href="#" rel="complex">Complex Mutations</a></li>
+          <li><a href="#" rel="fusions">Fusions</a></li>
+          <li><a href="#" rel="other">Other Mutations</a></li>
+        </ul>
+
+        <div id="substitutions" class="tabcontent">
+          <table width="780" border="0" cellpadding="2" cellspacing="3">
+            <tbody>
+              <tr>
+                <td colspan="2" style="vertical-align: top; height: 5px;"></td>
+              </tr>
+	      <#list substitutionvals as substitutionval>
+	        <tr>
+                  <td width="139" align="right" valign="top"><strong>${substitutionval[0]}</strong></td>
+                  <td width="620" align="left" valign="bottom">${substitutionval[1]}</td>
+                </tr>
+              </#list>
+            </tbody>
+          </table>
+        </div>
+
+        <div id="insertions" class="tabcontent">
+          <table width="780" border="0" cellpadding="2" cellspacing="3">
+            <tbody>
+              <tr>
+                <td colspan="2" style="vertical-align: top; height: 5px;"></td>
+              </tr>
+	      <#list insertionvals as insertionval>
+	        <tr>
+                  <td width="139" align="right" valign="top"><strong>${insertionval[0]}</strong></td>
+                  <td width="620" align="left" valign="bottom">${insertionval[1]}</td>
+                </tr>
+              </#list>
+            </tbody>
+          </table>
+        </div>
+
+        <div id="deletions" class="tabcontent">
+          <table width="780" border="0" cellpadding="2" cellspacing="3">
+            <tbody>
+              <tr>
+                <td colspan="2" style="vertical-align: top; height: 5px;"></td>
+              </tr>
+	      <#list deletionvals as deletionval>
+	        <tr>
+                  <td width="139" align="right" valign="top"><strong>${deletionval[0]}</strong></td>
+                  <td width="620" align="left" valign="bottom">${deletionval[1]}</td>
+                </tr>
+              </#list>
+            </tbody>
+          </table>
+        </div>
+
+        <div id="complex" class="tabcontent">
+          <table width="780" border="0" cellpadding="2" cellspacing="3">
+            <tbody>
+              <tr>
+                <td colspan="2" style="vertical-align: top; height: 5px;"></td>
+              </tr>
+	      <#list complexvals as complexval>
+	        <tr>
+                  <td width="139" align="right" valign="top"><strong>${complexval[0]}</strong></td>
+                  <td width="620" align="left" valign="bottom">${complexval[1]}</td>
+                </tr>
+              </#list>
+            </tbody>
+          </table>
+        </div>
+
+        <div id="fusions" class="tabcontent">
+          <table width="780" border="0" cellpadding="2" cellspacing="3">
+            <tbody>
+              <tr>
+                <td colspan="2" style="vertical-align: top; height: 5px;"></td>
+              </tr>
+	      <#list fusionvals as fusionval>
+	        <tr>
+                  <td width="139" align="right" valign="top"><strong>${fusionval[0]}</strong></td>
+                  <td width="620" align="left" valign="bottom">${fusionval[1]}</td>
+                </tr>
+              </#list>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+        <div id="other" class="tabcontent">
+          <table width="780" border="0" cellpadding="2" cellspacing="3">
+            <tbody>
+              <tr>
+                <td colspan="2" style="vertical-align: top; height: 5px;"></td>
+              </tr>
+	      <#list othervals as otherval>
+	        <tr>
+                  <td width="139" align="right" valign="top"><strong>${otherval[0]}</strong></td>
+                  <td width="620" align="left" valign="bottom">${otherval[1]}</td>
+                </tr>
+              </#list>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div id="references" class="tabcontent">
+        <table width="780" border="0" cellpadding="2" cellspacing="3">
+          <tbody>
+            <tr>
+              <td colspan="2" style="vertical-align: top; height: 5px;"></td>
+            </tr>
+	    <#list referencevals as referenceval>
+	      <tr>
+                <td width="139" align="right" valign="top"><strong>${referenceval[0]}</strong></td>
+                <td width="620" align="left" valign="bottom">${referenceval[1]}</td>
+              </tr>
+            </#list>
+          </tbody>
+        </table>
+      </div>
+      </td>
+      </table>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+
+  var genedata=new ddtabcontent("genetabs")
+  genedata.setpersist(true)
+  genedata.setselectedClassTarget("link") //"link" or "linkparent"
+  genedata.init()
+
+  var mutationdata=new ddtabcontent("mutationtabs")
+  mutationdata.setpersist(true)
+  mutationdata.setselectedClassTarget("link") //"link" or "linkparent"
+  mutationdata.init()
+
+</script>
+
+</body>
+</html>

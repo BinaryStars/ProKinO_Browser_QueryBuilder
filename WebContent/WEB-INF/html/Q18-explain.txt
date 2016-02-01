@@ -1,0 +1,1 @@
+Find the counts of the wild type amino acid residues located in the protein kinase domain and mutated.

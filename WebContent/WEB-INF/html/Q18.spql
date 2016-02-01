@@ -1,0 +1,14 @@
+PREFIX     rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX    rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX prokino: <http://om.cs.uga.edu/prokino/2.0/#>
+
+SELECT (STR(?wt) AS ?Wild_Type_Residue)
+       (Count(*) AS ?Count) 
+WHERE
+{
+  ?mut rdf:type               prokino:Missense .
+  ?mut prokino:hasWildTypeResidue ?wt .
+  ?mut prokino:hasPKAStartLocation ?pka .
+  filter(STR(?pka) != '0')
+}
+GROUP BY ?wt

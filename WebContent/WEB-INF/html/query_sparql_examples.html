@@ -1,0 +1,294 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SPARQL Query Examples</title>
+
+
+<link rel="stylesheet" type="text/css" href="../ui/prokino.css" />
+<link rel="stylesheet" type="text/css" href="../ui/sdmenu.css" />      
+<script type="text/javascript" src="../ui/sdmenu.js">
+      /***********************************************
+      * Slashdot Menu script- By DimX
+      * Submitted to Dynamic Drive DHTML code library:  http://www.dynamicdrive.com
+      * Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
+      ***********************************************/
+</script>
+
+<script type="text/javascript">
+      // <![CDATA[
+        var myMenu;
+        window.onload = function() {
+                myMenu = new SDMenu("my_menu");
+		myMenu.remember = true; 
+                myMenu.init();
+		myMenu.expandMenu(myMenu.submenus[0]);
+        };
+        // ]]>
+</script>
+<style type="text/css">
+<!--
+.style1 {
+	font-size: x-large;
+	font-weight: bold;
+}
+.style2 {
+	font-size: large
+}
+.style4 {
+	font-size: x-large;
+	font-weight: bold;
+	color: #003366;
+}
+.style5 {
+	font-size: xx-large
+}
+-->
+</style>
+<style type="text/css">
+tr.d0 td {
+background-color: #F0F0F0; color: black;
+font-size: small;
+}
+</style>
+
+</head>
+
+<body>
+
+<table width="1000" height="824" border="0" align="center" cellpadding="2" cellspacing="3"  bgcolor="#FFFFFF">
+
+  <!-- start include:  header.html -->
+
+  <tr valign="middle">
+    <td colspan="2" bgcolor="#C8C8C8" style="vertical-align: top;height: 20px;">
+      <table width="894" height="81" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td width="100" height="81" style="vertical-align:center;">
+	    <a href="http://www.uga.edu" target="_blank">
+	      <img src="../ui/uga_logo.gif" hspace="0" vspace="0" border="0" align="middle" />
+	    </a>
+	  </td>
+          <td width="845" height="81">
+            <strong>
+              <span class="style5">ProKinO: Protein Kinase Ontology Browser</span><br />
+              <span class="style15">The University of Georgia</span>
+            </strong>
+	  </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+  <!-- end include:  header.html -->
+
+  <tr>
+    <td colspan="2" style="vertical-align: top; ">
+      <table width="890" border="0" cellpadding="5" cellspacing="0">
+        <tr>
+
+          <!-- startinclude:  menu.html -->
+
+          <td width="120" style="vertical-align: top; ">
+            <div style="float: left" id="my_menu" class="sdmenu">
+              <div>
+                <span>Browse</span>
+                <a href="../class/Organism">Organisms</a>
+                <a href="../class/Gene">Genes</a>
+                <a href="../hierarchy/ProteinKinaseDomain">Kinase Domains</a>
+                <a href="../class/Cancer">Diseases</a>
+                <a href="../class/FunctionalDomain">Functional Domains</a>
+              </div>
+              <div>
+                <span>Search</span>
+                 <a href="../search/Gene">Genes</a>
+                 <a href="../search/Cancer">Diseases</a>
+                 <a href="../search/Pathway">Pathways</a>
+                 <a href="../search/All">All classes</a>      
+              </div>
+              <div>
+                <span>Query</span>
+                 <a href="../query/sparql">SPARQL</a>      
+                 <a href="../query/sparql_examples">Example queries</a> 
+                 <a href="../query/build">Builder</a>      
+              </div>
+              <div class="collapsed">
+                <span>Download</span>
+                <a href="../download/prokino">ProKinO</a>      
+              </div>
+              <div>
+                <span>About</span>
+                <a href="../about/prokino">ProKinO</a>
+                <a href="../about/schema">ProKinO Schema</a>
+                <a href="../about/datasources">Data Sources</a>      
+                <a href="../about/browser">ProKinO Browser</a>      
+              </div>
+            </div>
+          </td>
+
+          <!-- end include:  menu.html -->
+
+          <td width="10">
+          </td>
+
+          <td width="780" valign="top">
+            <span class="style4">SPARQL query examples</span> <br />
+            <hr />
+            <table width="699" border="0">
+              <tr>
+                <td>Queries related to hypothesis-driven analysis using ProKinO (new example queries):
+                  <blockquote>
+                  <table width="658" border="0" cellpadding="2" cellspacing="2">
+                    <tr class="d0">
+                      <td width="65" align="left" valign="top"><a href="Q15">Query 15</a></td>
+                      <td width="577"> Find all  missense mutations that occur in a specified sequence or structural motif.</td>
+                    </tr>
+                    <tr class="d0">
+                      <td align="left" valign="top"><a href="Q16">Query 16</a></td>
+                      <td> Find all reactions in which a specified kinase acts as either a reactant, a product or a catalyst.</td>
+                    </tr>
+                    <tr class="d0">
+                      <td align="left" valign="top"><a href="Q17">Query 17</a></td>
+                      <td> Find all pathways in which a specified kinase participates.</td>
+                    </tr>
+                    <tr class="d0">
+                      <td align="left" valign="top"><a href="Q18">Query 18</a></td>
+                      <td> Find the counts of the wild type amino acid residues located in the protein kinase domain and mutated.</td>
+                    </tr>
+                    <tr class="d0">
+                      <td align="left" valign="top"><a href="Q19">Query 19</a></td>
+                      <td> Find the counts of wild type arginine mutations  for each kinase. Answers the question: which kinase has the most arginine mutations?</td>
+                    </tr>
+                    <tr class="d0">
+                      <td align="left" valign="top"><a href="Q20">Query 20</a></td>
+                      <td>Find all the missense mutations  that alter an arginine in the epidermal growth factor receptor (EGFR).</td>
+                    </tr>
+                </table></blockquote></td>
+              </tr>
+              <tr>
+                <td>
+                  <p>The queries listed below were introduced and discussed in:<br />
+                  <blockquote>Gosal, Gurinder, Krys J. Kochut, and
+                  Natarajan Kannan, &quot;ProKinO: An ontology for
+                  integrative analysis of protein kinases in
+                  cancer,&quot; <em>PloS ONE</em> 6.12 (2011): e28782. 
+                  &nbsp;&nbsp;&nbsp;&nbsp;[<a href="http://www.plosone.org/article/info%3Adoi%2F10.1371%2Fjournal.pone.0028782" target="_blank">view article</a>]</blockquote></p>
+                  Queries counting kinases:
+                  <blockquote>
+                  <table width="658" border="0" cellpadding="2" cellspacing="2">
+                    <tr class="d0">
+                      <td width="65" align="left" valign="top"><a href="Q5b">Query 5b</a></td>
+                      <td width="577"> Find the counts of protein kinases having missense mutations
+                        implicated in different types of cancer and display them in descending order. </td>
+                    </tr>
+                    <tr class="d0">
+                      <td align="left" valign="top"><a href="Q6">Query 6</a></td>
+                      <td> Find the counts of protein kinases having missense mutations
+                        implicated in haematopoietic neoplasm and display top 10 of them in descending order. </td>
+                    </tr>
+                    <tr class="d0">
+                      <td align="left" valign="top"><a href="Q9">Query 9</a></td>
+                      <td> Find the counts of protein kinases (at least 2) having mutations 
+                        (of any type) implicated in different types of cancer and display them in descending order. </td>
+                    </tr>
+                    <tr class="d0">
+                      <td align="left" valign="top"><a href="Q10">Query 10</a></td>
+                      <td> Find the counts of protein kinases (at least 4) pariticipating in 
+                        pathways and display them in descending order; include only pathways with 4 or more participating kinases. </td>
+                    </tr>
+                    <tr class="d0">
+                      <td align="left" valign="top"><a href="Q12">Query 12</a></td>
+                      <td> Find the counts of protein kinases having mutations (of any type) 
+                        in various primary sites and display them in descending order. </td>
+                    </tr>
+                </table></blockquote></td>
+              </tr>
+              <tr>
+                <td><p>Queries counting mutations:
+                  </p>
+                  <blockquote>
+                    <table width="658" border="0" cellpadding="2" cellspacing="2">
+                    <tr class="d0">
+                      <td width="65" align="left" valign="top"><a href="Q5a">Query 5a</a></td>
+                      <td width="577"> Find the counts of substitution missense mutations
+                        (at least 4) implicated in different types of cancer and display them in descending order </td>
+                    </tr>
+                    <tr class="d0">
+                      <td align="left" valign="top"><a href="Q7">Query 7</a></td>
+                      <td> Find the counts of different mutations (of all types) for
+                        all kinase genes and display the top 10 in the descending order. </td>
+                    </tr>
+                    <tr class="d0">
+                      <td align="left" valign="top"><a href="Q8">Query 8</a></td>
+                      <td> Find the counts of substitution missense mutations for
+                        all genes and display top 10 of them in descending order. </td>
+                    </tr>
+                    <tr class="d0">
+                      <td align="left" valign="top"><a href="Q13">Query 13</a></td>
+                      <td> Find the counts of different mutations (all types) for
+                        all sub-domains and display them in descending order. </td>
+                    </tr>
+                    <tr class="d0">
+                      <td align="left" valign="top"><a href="Q14">Query 14</a></td>
+                      <td> Find the counts of subsititution missense mutations of the
+                        protein kinase FLT3 all having the primary site of
+                        Haematopoietic and Lymphoid tissue, and located in
+                        various sub-domains and display them in descending order. </td>
+                    </tr>
+                  </table>
+               </blockquote>
+                </td>
+              </tr>
+              <tr>
+                <td><p>Queries counting pathways:
+                  </p>
+                  <blockquote>
+                    <table width="658" border="0" cellpadding="2" cellspacing="2">
+                    <tr class="d0">
+                      <td width="65" align="left" valign="top"><a href="Q3">Query 3</a></td>
+                      <td width="577"> Find the counts of pathways associated with protein kinases and 
+                        display top 10 of them in descending order. </td>
+                    </tr>
+                    <tr class="d0">
+                      <td align="left" valign="top"><a href="Q11">Query 11</a></td>
+                      <td> Find the counts of pathways in which mutated protein kinases 
+                        pariticipate and display them in descending order;
+                        include only kinases with 4 or more pathways in which they participate. </td>
+                    </tr>
+                   </table>
+               </blockquote>
+                </td>
+              </tr>
+              <tr>
+                <td><p>Other queries:
+                  </p>
+                  <blockquote>
+                    <table width="658" border="0" cellpadding="2" cellspacing="2">
+                    <tr class="d0">
+                      <td width="65" align="left" valign="top"><a href="Q1">Query 1</a></td>
+                      <td width="577"> Find the counts of crystal structures for all protein kinases 
+                        and display top 10 of them in descending order. </td>
+                    </tr>
+                    <tr class="d0">
+                      <td align="left" valign="top"><a href="Q2">Query 2</a></td>
+                      <td> Find the counts of isoforms for all protein kinases
+                        and display top 10 of them in descending<br />
+                        order. </td>
+                    </tr>
+                    <tr class="d0">
+                      <td align="left" valign="top"><a href="Q4">Query 4</a></td>
+                      <td> Find the counts of different cancer types implicated in
+                        protein kinases and display top 10 of them in descending order. </td>
+                    </tr>
+                  </table>
+               </blockquote>
+                </td>
+              </tr>
+          </table></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+body {
+        background-color: #8F8F8F;
+        font-family:sans-serif;
+        font-size: 0.875em;
+}
+A:hover {
+  color: #000E7E; 
+  text-decoration: none
+}
+A.navlink:link {
+  color: #0014B2; 
+  text-decoration: none
+}
+A.navlink:visited {
+  color: #0014B2; 
+  text-decoration: none
+}
+A.navlink:hover {
+  color: #890305;
+  text-decoration: none
+}

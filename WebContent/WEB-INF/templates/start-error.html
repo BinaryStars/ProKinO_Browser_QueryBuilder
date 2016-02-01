@@ -1,0 +1,72 @@
+<html>
+<head>
+<title>${title}</title>
+<link rel="stylesheet" href="../prokino.css" type="text/css">
+<link rel="stylesheet" href="../../prokino.css" type="text/css">
+<body>
+
+<table width="800" height="800" border="0" align="center" cellpadding="5" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td valign="top">
+       <p>
+       <h2>ProKinO: A Protein Kinase Ontology</h2>
+     
+       <table width="70" border="0" cellpadding="2" cellspacing="3">
+         <tr>
+            <td width="20" align="right" valign="top" style="font-size:large;"><strong>Version:</strong></td>
+            <td width="40" align="left" valign="top" style="font-size:large;">${version}</td>
+         </tr>
+         <tr>
+            <td width="20" align="right" valign="top" style="font-size:large;"><strong>Date:</strong></td>
+            <td width="40" align="left" valign="top" style="font-size:large;">${date}</td>
+         </tr>
+       </table>
+     
+       <table width="600" border="0" cellpadding="2" cellspacing="3">
+         <tr>
+           <td width="580" align="left" valign="top">
+              You may begin browsing ProKinO by entering a protein kinase gene
+              by name (below).  Once you provide the gene name and click on the View
+              button, you will see a page with a wealth of information about the
+              selected gene.
+              <p>Some of the displayed values represent links to additional
+              information related to the gene, such as its functional domain,
+              features, mutations, pathways, references etc.  These values
+              are shown as hypetext links which you may explore simply by
+              following them in the browser.
+           </td> 
+         </tr>
+       </table>
+     
+     
+       <form method=post
+             action="http://vulcan.cs.uga.edu:8080/prokino/rest/genebyname">
+     
+         <table width="600" border="0" cellpadding="2" cellspacing="3">
+           <tr>
+             <td width="580" align="left" valign="top">
+	        <p>Please enter gene name (e.g. EGFR, AKT1, etc.): <input name="gene" type=text size=20>
+	     </td>     
+           </tr>
+           <tr>
+             <td width="580" align="left" valign="top">
+                <p>${errormsg}; Please try again.
+	     </td>     
+           </tr>
+           <tr>
+             <td width="580" align="left" valign="top">
+                <p><p><p><p><p><p><input value="View" type=submit>
+                <input type=reset>
+             </td>
+           </tr>
+         </table>
+
+       </form>
+
+    </td>
+  </tr>
+</table>
+
+</body>
+</head>
+</html>

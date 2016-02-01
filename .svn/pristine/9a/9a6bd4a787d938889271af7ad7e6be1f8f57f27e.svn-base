@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>${title}</title>
+
+<link rel="stylesheet" type="text/css" href="../ui/prokino.css" />
+<link rel="stylesheet" type="text/css" href="../ui/sdmenu.css" />
+
+<script type="text/javascript" src="../ui/sdmenu.js">
+      /***********************************************
+      * Slashdot Menu script- By DimX
+      * Submitted to Dynamic Drive DHTML code library:  http://www.dynamicdrive.com
+      * Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
+      ***********************************************/
+</script>
+
+<script type="text/javascript">
+      // <![CDATA[
+        var myMenu;
+        window.onload = function() {
+                myMenu = new SDMenu("my_menu");
+		myMenu.remember = true; 
+                myMenu.init();
+		myMenu.expandMenu(myMenu.submenus[0]);
+        };
+        // ]]>
+</script>
+<style type="text/css">
+<!--
+.style1 {
+	font-size: x-large;
+	font-weight: bold;
+}
+.style2 {
+	font-size: large
+}
+.style4 {
+	font-size: x-large;
+	font-weight: bold;
+	color: #003366;
+}
+.style5 {
+	font-size: xx-large
+}
+-->
+</style>
+</head>
+<body>
+<table width="1000" height="824" border="0" align="center" cellpadding="2" cellspacing="3"  bgcolor="#FFFFFF">
+
+  <#include "header.html">
+
+  <tr>
+    <td colspan="2" style="vertical-align: top; ">
+      <table width="890" border="0" cellpadding="5" cellspacing="0">
+        <tr>
+
+	  <#include "menu.html">
+
+          <td width="10">
+          </td>
+
+          <td width="780" valign="top"><span class="style4">Search in class: ${classname}</span> <br />
+            <hr />
+            <table width="500" border="0" cellpadding="2" cellspacing="3">
+              <tr>
+                <td colspan="2" style="vertical-align: top; height: 5px;"></td>
+              </tr>
+              <tr>
+                <td width="588">
+                  <form method=post action="result">
+		     <p>Enter your search terms in the input box below.
+		     <p>
+			 <input type="text" size="70" name="search_text" 
+				   style="font-family: 'Courier New', Courier, monospace">
+			 <input type="hidden" name="class_name" value="${classname}">
+		     <P><input type="submit" value="Search">  
+                        <input type="reset" value="Clear"> 
+		  </form>
+	          <p>You can use a search expression composed of:
+		    <ul>
+		      <li><code>term</code> -- a single word</li>
+		      <li><code>"term term ... term"</code> -- a phrase (sequence of words), enclosed within double quotes</li>
+		      <li><code>+term</code> -- the term <i>must be</i> in every hit</li>
+		      <li><code>-term</code> -- the term <i>must not be</i> in every hit</li>
+		      <li><code>term term ... term</code> -- a list of
+				terms, treated as a disjunction of
+				terms, equivalent to</li>
+		      <li><code>term OR term OR ... OR term</code></li>
+		      <li><code>term AND term AND ... AND term</code>
+		      --  a conjunction of terms</li>
+		      <li>NOTE: <code>AND</code>  and <code>OR</code> must
+		      be written in capital letters.  Also,
+		      the <code>AND</code> operator takes precedence over <code>OR</code>, which may be
+		      altered with the use of parentheses.</li>
+		    </ul>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>

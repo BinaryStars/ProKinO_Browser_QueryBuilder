@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7">
+		<attributes>
+			<attribute name="owner.project.facets" value="java"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/axis.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/commons-logging.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/freemarker.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/icu4j_3_4.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/iri.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jena-arq-2.10.0.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jena-core-2.10.0.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jena-iri-0.9.5.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/log4j-1.2.13.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/slf4j-api-1.5.8.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/slf4j-log4j12-1.5.8.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/virt_jena2.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/virtjdbc4.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/xercesImpl.jar"/>
+	<classpathentry kind="lib" path="lib/jaxrs-api-3.0.10.Final.jar"/>
+	<classpathentry kind="lib" path="lib/jboss-servlet-api_3.1_spec-1.0.0.Final.jar"/>
+	<classpathentry kind="lib" path="lib/resteasy-jaxrs-3.0.10.Final.jar"/>
+	<classpathentry kind="output" path="build/classes"/>
+</classpath>

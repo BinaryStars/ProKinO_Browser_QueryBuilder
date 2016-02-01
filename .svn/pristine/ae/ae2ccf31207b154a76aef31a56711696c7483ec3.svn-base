@@ -1,0 +1,22 @@
+PREFIX     rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX    rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX prokino: <http://om.cs.uga.edu/prokino/2.0/#>
+
+SELECT (STR(?pathwayname) AS ?Pathway) (COUNT(*) AS ?No_Genes) WHERE
+{
+  ?pathway rdf:type               prokino:Pathway .
+  ?pathway prokino:hasPrimaryName ?pathwayname .
+  {
+    SELECT ?pathway ?mut ?gene WHERE
+    {
+       ?gene    rdf:type               prokino:Gene .
+       ?gene    prokino:presentIn      prokino:Human .
+       ?gene    prokino:hasMutation    ?mut .
+       ?gene    prokino:participatesIn ?pathway .
+    }
+    GROUP BY ?pathway ?gene
+  }
+}
+GROUP BY ?pathway ?pathwayname
+HAVING (count(*) >= 4)
+ORDER BY DESC(?No_Genes)

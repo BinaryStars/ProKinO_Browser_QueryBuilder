@@ -1,0 +1,4 @@
+Find the counts of subsititution missense mutations of the
+Human protein kinase FLT3 all having the primary site of Haematopoietic 
+and Lymphoid tissue, and located in various sub-domains
+and display them in descending order.

@@ -1,0 +1,33 @@
+PREFIX     rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX    rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX prokino: <http://om.cs.uga.edu/prokino/2.0/#>
+
+SELECT distinct (STR(?gname) as ?Gene)
+       (STR(?mname) as ?Motif)
+       (STR(?wt) AS ?Wild_Type) 
+       (STR(?pos) as ?Position)
+       (STR(?mutt) as ?Mutant_Type)
+       (STR(?pka) as ?PKA_Position)  
+       (STR(?dname) as ?Disease)
+       (STR(?psite) as ?Primary_Site)
+       (STR(?subsite) as ?Subsite)
+WHERE
+{
+  ?mut   rdf:type                    prokino:Missense .
+  ?gene  prokino:hasMutation         ?mut .
+  ?gene  prokino:hasPrimaryName      ?gname .
+  ?mut   prokino:hasWildTypeResidue  ?wt .
+  ?mut   prokino:hasMutantType       ?mutt .
+  ?mut   prokino:hasStartLocation    ?pos .
+  ?mut   prokino:hasPKAStartLocation ?pka .
+  filter(?pka != '0')
+
+  ?mut   prokino:locatedIn           ?motif .
+  ?motif prokino:hasPrimaryName      ?mname .
+  filter(STR(?mname) = 'Regulatory Spine')
+
+  ?mut   prokino:inSample            ?samp .
+  ?samp  prokino:hasPrimarySite      ?psite .
+  ?samp  prokino:hasSiteSubType      ?subsite .
+  ?samp  prokino:hasPrimaryHistology ?dname .
+}

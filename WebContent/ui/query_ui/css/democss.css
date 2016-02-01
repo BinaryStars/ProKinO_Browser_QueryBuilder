@@ -1,0 +1,318 @@
+.demo {
+  /*.aLabel {
+	background-color:white;
+	opacity:0.1;
+	padding:4em;				
+	cursor:pointer;
+	
+	}*/
+}
+.demo #demo {
+  margin-top: 5em;
+}
+
+
+
+.demo .ww {
+  padding: 1px;
+  width: 65px;
+  height: 45px;
+  position:absolute;
+  line-height: 3em;
+  text-align: center;
+  vertical-align: middle;
+  /*border: 1px solid black;*/
+  border: 1px solid #D2B48C;
+  /*border of the classes */
+  z-index: 4;
+  border-radius: 1em;
+  border: 1px solid #2e6f9a;
+  /*box-shadow: 2px 2px 19px #e0e0e0;
+	-o-box-shadow: 2px 2px 19px #e0e0e0;
+	-webkit-box-shadow: 2px 2px 19px #e0e0e0;
+	-moz-box-shadow: 2px 2px 19px #e0e0e0;
+	-moz-border-radius:8px;*/
+  border-radius: 8px;
+  opacity: 0.9;
+  filter: alpha(opacity=80);
+  cursor: move;
+  /*background-color:white;*/
+  background-color: #ffe5bc;
+  /*class colors*/
+  font-size: 11px;
+  font-weight: bold;
+  -webkit-transition: background-color 0.25s ease-in;
+  -moz-transition: background-color 0.25s ease-in;
+  transition: background-color 0.25s ease-in;
+}
+
+.demo #window0 { 
+	  line-height: 2em;	
+
+	}
+.demo .ww:hover {
+  background-color: #5287a9;
+  color: #ffe5bc;
+}
+
+.demo .divmargin {
+  left: 25em;
+  /*top:25em;*/
+}
+.demo .wwSelect {
+  background-color: #5287a9;
+  color: #ffe5bc;
+}
+.demo .disabledField {
+  background-color: #E0E0E0;
+  color: #C0C0C0;
+}
+.demo .popover-title {
+  display: none;
+}
+.demo .aLabel {
+  -webkit-transition: background-color 0.25s ease-in;
+  -moz-transition: background-color 0.25s ease-in;
+  transition: background-color 0.25s ease-in;
+}
+.demo .aLabel._jsPlumb_hover,
+.demo ._jsPlumb_source_hover,
+.demo ._jsPlumb_target_hover {
+  background-color: #5c96bc;
+  color: white;
+}
+.demo .aLabel {
+  background-color: white;
+  padding: 2px 10px;
+  /*font:1.5em arial; */
+  color: #444;
+  z-index: 21;
+  /*border:1px dotted gray;*/
+  opacity: 0.1;
+  filter: alpha(opacity=80);
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 7pt;
+}
+.demo .connLabel {
+  font-size: 11px;
+  font-weight: bold;
+}
+.demo .statemachine-demo ._jsPlumb_endpoint {
+  z-index: 3;
+}
+.demo .querypanel {
+  margin-top: 1em;
+  width: 283px;
+  height: 500px;
+  margin-left: 650px;
+}
+.demo .heading {
+  background-color: #ffe5bc;
+}
+.demo .formElement {
+  font-size: 11px;
+  font-family: "Arial", Helvetica, sans-serif;
+}
+.demo .panel {
+  /* border: 2px solid;*/
+  border-radius: 25px;
+}
+.demo .dragHover {
+  border: 2px solid orange;
+}
+.demo path {
+  cursor: pointer;
+}
+.demo .gobutton {
+  cursor: pointer;
+  /*forces the cursor to change to a hand when the button is hovered*/
+  padding: 2px 5px;
+  /*add some padding to the inside of the button*/
+  background: #5c96bc;
+  /*the colour of the button*/
+  border: 1px solid #5c96bc;
+  /*required or the default border for the browser will appear*/
+  /*give the button curved corners, alter the size as required*/
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  /*give the button a drop shadow
+-webkit-box-shadow: 0 0 4px rgba(0,0,0, .75);
+-moz-box-shadow: 0 0 4px rgba(0,0,0, .75);
+box-shadow: 0 0 4px rgba(0,0,0, .75);
+/*style the text*/
+  color: #f3f3f3;
+  font-size: 11px;
+  margin-left: 20px;
+}
+.demo .gobutton:hover,
+.demo input#gobutton:focus {
+  background-color: #5287a9;
+  /*make the background a little darker*/
+  /*reduce the drop shadow size to give a pushed button effect*/
+  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0 0 1px rgba(0, 0, 0, 0.75);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.75);
+}
+.demo .removebutton {
+  cursor: pointer;
+  /*forces the cursor to change to a hand when the button is hovered*/
+  padding: 2px 5px;
+  /*add some padding to the inside of the button*/
+  background: #585858  ;
+  /*the colour of the button*/
+  border: 1px solid #585858;
+  /*required or the default border for the browser will appear*/
+  /*give the button curved corners, alter the size as required*/
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  /*style the text*/
+  color: #f3f3f3;
+  font-size: 11px;
+  margin-left: 20px;
+}
+.demo .roundbutton {
+  width: 20px;
+  /*same as the height*/
+  height: 20px;
+  /*same as the width*/
+  background-color: #ADD8E6;
+  border: 1px solid #ADD8E6;
+  /*same colour as the background*/
+  color: #fff;
+  font-size: 10px;
+  /*set the border-radius at half the size of the width and height*/
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+}
+.demo .roundbutton:hover {
+  background: #5287a9;
+  border: 1px solid #5287a9;
+  /*reduce the size of the shadow to give a pushed effect*/
+}
+.demo .roundbuttonSelect {
+  background: #5287a9;
+  border: 1px solid #5287a9;
+  /*reduce the size of the shadow to give a pushed effect*/
+}
+.demo .roundbuttonSelect:hover {
+  background: #ADD8E6;
+  border: 1px solid #ADD8E6;
+  /*reduce the size of the shadow to give a pushed effect*/
+}
+.demo .execbutton {
+  cursor: pointer;
+  /*forces the cursor to change to a hand when the button is hovered*/
+  padding: 3px 7px;
+  /*add some padding to the inside of the button*/
+  background: #ffe5bc;
+  /*the colour of the button*/
+  /*border:1px solid #ffe5bc; /*required or the default border for the browser will appear*/
+  /*give the button curved corners, alter the size as required*/
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  /*give the button a drop shadow*/
+  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.75);
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.75);
+  /*style the text*/
+  /*color:#5287a9;*/
+  font-size: 12px;
+  margin-left: 250px;
+}
+.demo ::-webkit-input-placeholder {
+  color: #707070 ;
+}
+.demo :-moz-placeholder {
+  /* Firefox 18- */
+  color: #707070;
+}
+.demo ::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #707070;
+}
+.demo :-ms-input-placeholder {
+  color: #707070;
+}
+.demo .textbox {
+  -moz-border-radius-topright: 20px;
+  -webkit-border-top-right-radius: 20px;
+  border-top-right-radius: 20px;
+  -moz-border-radius-bottomright: 20px;
+  -webkit-border-bottom-right-radius: 30px;
+  border-bottom-right-radius: 20px;
+  border: 1px solid #848484;
+  outline: 0;
+  height: 20px;
+  width: 100px;
+  padding-right: 10px;
+}
+.demo .ep {
+  position: absolute;
+  bottom: 37%;
+  right: 5px;
+  width: 1em;
+  height: 1em;
+  background-color: orange;
+  cursor: pointer;
+  box-shadow: 0px 0px 2px black;
+  -webkit-transition: -webkit-box-shadow 0.25s ease-in;
+  -moz-transition: -moz-box-shadow 0.25s ease-in;
+  transition: box-shadow 0.25s ease-in;
+}
+.demo .ep:hover {
+  box-shadow: 0px 0px 6px black;
+}
+.demo .parent {
+  position: relative;
+  
+}
+.demo .child {
+  position: absolute;
+  top: 0;
+}
+
+
+.demo .checkmark  {
+    background:url("../ui/query_ui/img/check-mark.jpg") no-repeat 0 50%;
+    padding-left: 2px;
+}
+
+.demo .generalbutton{
+cursor:pointer; /*forces the cursor to change to a hand when the button is hovered*/
+padding:1px 1px; /*add some padding to the inside of the button*/
+background:transparent  ; /*the colour of the button*/
+border:1px; /*required or the default border for the browser will appear*/
+/*give the button curved corners, alter the size as required*/
+-moz-border-radius: 0px;
+-webkit-border-radius: 0px;
+border-radius: 0px;
+/*give the button a drop shadow
+-webkit-box-shadow: 0 0 4px rgba(0,0,0, .75);
+-moz-box-shadow: 0 0 4px rgba(0,0,0, .75);
+box-shadow: 0 0 4px rgba(0,0,0, .75);
+/*style the text*/
+color:#5c96bc;
+}
+
+.demo .submitbutton{
+margin-left: 15px;
+margin-top: 10px;
+color:#5c96bc;
+font-size:14px;
+
+
+}
+.demo .ddbutton{
+margin-left: 2px;
+/*color:#5c96bc;*/
+font-size:12px;
+color:#8A8A8A;
+
+
+
+}

@@ -1,0 +1,6 @@
+root.dir=.
+src.dir=src
+conf.dir=etc
+project.name=prokino
+build.dir=WebContent
+deploy.dir=/usr/local/jboss/server/default/deploy

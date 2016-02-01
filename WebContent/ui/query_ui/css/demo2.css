@@ -1,0 +1,39 @@
+.div1 {
+  float: left;
+  width: 70%;
+}
+
+.rel {
+	 position:relative;	
+}
+
+.abs {
+	position:absolute;
+}
+
+.div2 {
+  float: right;
+  width: 30%;
+  height: 300px;
+}
+
+.parent-element {
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.element {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.txtarea{
+    height: 500px;
+    width: 100%;
+   -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+}
+

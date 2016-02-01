@@ -1,0 +1,17 @@
+PREFIX     rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX    rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX prokino: <http://om.cs.uga.edu/prokino/2.0/#>
+
+
+SELECT (STR(?cancerName) AS ?CancerType) (COUNT(*) AS ?No_Mutations) WHERE
+{
+   ?gene   rdf:type                       prokino:Gene .
+   ?gene   prokino:presentIn              prokino:Human .
+   ?gene   prokino:hasMutation            ?mut .
+   ?mut    prokino:implicatedIn           ?cancer .
+   ?mut    rdf:type                       prokino:Missense .
+   ?cancer rdfs:label                     ?cancerName
+}
+GROUP BY ?cancerName
+HAVING (count(*) >= 4)
+ORDER BY DESC(?No_Mutations)

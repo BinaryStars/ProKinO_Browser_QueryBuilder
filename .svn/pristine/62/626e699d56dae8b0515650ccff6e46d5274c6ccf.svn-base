@@ -1,0 +1,10 @@
+Find all missense mutations that occur in a specified sequence or structural motif.<br>
+In this example, we find all mutations located in the hydrophobic regulatory spine (Regulatory Spine). By replacing the line:
+<pre>
+        filter(STR(?mname) = 'Regulatory Spine')
+</pre>
+with:
+<pre>
+        filter(STR(?mname) = 'DFG Motif')
+</pre>
+we instead find all the mutations located in the DFG Motif. Likewise, any defined sequence or structural motif can be used.
